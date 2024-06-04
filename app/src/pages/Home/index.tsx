@@ -7,6 +7,7 @@ import { ContainerScroll } from "@/components/ui/animated-container";
 import { SparklesCore } from "@/components/ui/sparkles";
 import EndlessImage from '@/assets/endless.png';
 import Antoine from '@/assets/me.jpg';
+import { isDark } from "@/lib/utils";
 export const Homepage = () => {
     const { loading, setLoading } = useContext(LoadingContext);
     const { theme } = useTheme();
@@ -46,16 +47,16 @@ export const Homepage = () => {
                 
                         {/* Core component */}
                         <SparklesCore
-                            background="transparent"
+                            background={isDark(theme) ? "#000000" : "#FFFFFF"}
                             minSize={0.4}
                             maxSize={1}
                             particleDensity={1200}
                             className="w-full h-full"
-                            particleColor="#FFFFFF"
+                            particleColor="#5464FC"
                         />
                 
                         {/* Radial Gradient to prevent sharp edges */}
-                        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+                        <div className="absolute inset-0 w-full h-full  dark:bg-black bg-white [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
                     </div>
                   </h1>
                 </>
