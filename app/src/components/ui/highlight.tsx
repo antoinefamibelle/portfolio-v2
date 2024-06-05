@@ -1,6 +1,6 @@
 "use client";
 import { cn } from '@/lib/utils';
-import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 
 export const Highlight = ({
@@ -26,10 +26,9 @@ export const Highlight = ({
         style={{
           backgroundRepeat: "no-repeat",
           backgroundPosition: "left center",
-          display: "inline",
         }}
         className={cn(
-          `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
+          `md:inline relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
           className
         )}
       >

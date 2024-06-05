@@ -87,9 +87,7 @@ const workProjects = [
 ];
 
 export const Homepage = () => {
-    const { loading, setLoading } = useContext(LoadingContext);
     const { theme } = useTheme();
-    const isDesktop = window.innerWidth > 1024;
 
     return(
         <div className="mx-2 h-screen">
@@ -106,19 +104,19 @@ export const Homepage = () => {
                     <p>I'm a software engineer</p>
                     <p>and I love to build things.</p>
                 </p>
-                <img src={Antoine} alt="Endless" className="h-80 rounded-2xl" />
+                <img src={Antoine} alt="Endless" className="md:h-80 rounded-2xl" />
             </div>
             {/* 
              Section 1: Macbook Scroll
              */}
-             <div className="h-[150vh] overflow-hidden pb-50">
+             <div className="md:h-[150vh] h-[125vh] overflow-hidden md:pb-50">
                 <MacbookScroll
-                    src={isDesktop ? EndlessImage : EndlessMobile}
+                    src={EndlessImage}
                     title={
                         <>
-                        <h1 className="text-4xl font-semibold text-black dark:text-white">
+                        <h1 className="text-[4rem] md:text-4xl font-semibold text-black dark:text-white">
                             The only limit <br />
-                            <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                            <span className="text-[6rem] md:text-4xl font-bold mt-1 leading-none">
                             is your creativity.
                             </span>
                             <div className="h-40 relative mt-2">
@@ -156,7 +154,7 @@ export const Homepage = () => {
                         Let met take you to my story
                     </span>
                     <div className="md:mt-12">
-                        {content.map((item, index) => (
+                        {content.map((item) => (
                             <div className="relative pl-8 sm:pl-32 py-6 group">
                                 <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                     <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-24 h-6 mb-3 sm:mb-0 rounded-full">
