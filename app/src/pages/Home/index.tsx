@@ -9,7 +9,6 @@ import EndlessCustomerApp from '@/assets/endless-customer-app.png';
 import EndlessCustomerArea from '@/assets/customer-area.jpg';
 import BlingBling from '@/assets/blingbling.png';
 import Antoine from '@/assets/me.jpg';
-import AntoineLogo from '@/assets/antoine-memoji.jpeg';
 import { isDark } from "@/lib/utils";
 import { MacbookScroll } from "@/components/ui/macbook";
 import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
