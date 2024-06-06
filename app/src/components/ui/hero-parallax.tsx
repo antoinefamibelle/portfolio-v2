@@ -8,6 +8,39 @@ import {
   MotionValue,
 } from "framer-motion";
 
+import Docker from "@/assets/icons/docker.svg";
+import ReactIcon from "@/assets/icons/react.svg";
+import Node from "@/assets/icons/node.svg";
+import Postgres from "@/assets/icons/postgres.svg";
+import Sentry from "@/assets/icons/sentry.svg";
+import Redis from "@/assets/icons/redis.svg";
+import TypeScript from "@/assets/icons/ts.svg";
+import SQL from "@/assets/icons/sql.svg";
+
+const IconTechMapper = (tech: string) => {
+  switch (tech) {
+    case "docker":
+      return Docker;
+    case "react":
+      return ReactIcon;
+    case "node":
+      return Node;
+    case "postgres":
+      return Postgres;
+    case "sentry":
+      return Sentry;
+    case "redis":
+      return Redis;
+    case "ts":
+      return TypeScript;
+    case "sql":
+      return SQL;
+    default:
+      return Docker;
+  }
+
+}
+
 export const HeroParallax = ({
   products,
 }: {
@@ -124,6 +157,7 @@ export const ProductCard = ({
     link: string;
     thumbnail: string;
     isMobile?: boolean;
+    techno?: string[];
   };
   translate: MotionValue<number>;
 }) => {
@@ -153,8 +187,17 @@ export const ProductCard = ({
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
-        bgepifweijnfewijn
       </h2>
+      <div className="p-4 absolute justify-end items-end flex flex-row bottom-12 right-4 bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 ">
+      {product.techno && product.techno.map((tech) => {
+        return (
+          <div>
+            <img src={IconTechMapper(tech)} alt={tech} className="h-8 w-8 mx-2" />
+          </div>
+        );
+        })
+      }
+      </div>
     </motion.div>
   );
 };

@@ -1,12 +1,18 @@
-import { useContext, useState } from "react";
-import { LoadingContext } from "@/context";
 import { Highlight } from "@/components/ui/highlight";
 import { useTheme } from "@/context/theme";
 import { SparklesCore } from "@/components/ui/sparkles";
 import EndlessImage from '@/assets/endless.png';
-import EndlessMobile from '@/assets/endless-mobile.png';
 import EndlessCustomerApp from '@/assets/endless-customer-app.png';
 import EndlessCustomerArea from '@/assets/customer-area.jpg';
+import Nudiet from '@/assets/nudiet.png';
+import Leclerc from '@/assets/leclerc.png';
+import Pertimm from '@/assets/pertimm.png';
+import Vetapp from '@/assets/vetapp.png';
+import Buddy from '@/assets/buddy.png';
+import ClickNLerins from '@/assets/clicknlerins.png';
+import Hospitalidee from '@/assets/hospitalidee.png';
+import IntranetInside from '@/assets/intranet-inside.png';
+
 import BlingBling from '@/assets/blingbling.png';
 import Antoine from '@/assets/me.jpg';
 import { isDark } from "@/lib/utils";
@@ -50,40 +56,188 @@ const workProjects = [
         link: 'https://endless.com',
         thumbnail: EndlessImage,
         techno: [
-            'Next.js',
-            'TailwindCSS',
-            'TypeScript',
-            'Micro-services',
-            'Docker',
-            'Eslint'
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry'
+        ]
+    },
+    {
+        title: 'Pertimm',
+        link: 'https://www.pertimm.com/',
+        thumbnail: Pertimm,
+        techno: [
+            'vue',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
         ]
     },
     {
         title: 'Endless (Mobile App)',
         link: 'https://endless.com',
         thumbnail: EndlessCustomerApp,
-        isMobile: true
+        isMobile: true,
+        techno: [
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry',
+            'expo'
+        ]
+    },
+    {
+        title: 'Buddy (Mobile)',
+        link: '',
+        thumbnail: Buddy,
+        techno: [
+            'react',
+            'expo',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
     },
     {
         title: 'Endless (E-commerce v2)',
         link: 'https://endless.com',
         thumbnail: EndlessCustomerArea,
+        techno: [
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry'
+        ]
+
+    },
+   
+    {
+        title: 'Endless',
+        link: 'https://endless.com',
+        thumbnail: EndlessImage,
+        techno: [
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry'
+        ]
+    },
+    {
+        title: 'Nudiet',
+        link: 'https://nudiet.fr/',
+        thumbnail: Nudiet,
+        techno: [
+            'react',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
+    },
+   
+    {
+        title: 'Hospitalidee',
+        link: 'https://www.hospitalidee.fr/',
+        thumbnail: Hospitalidee,
+        techno: [
+            'react',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
+    },
+    {
+        title: 'Intranet Inside',
+        link: 'https://www.intranet-inside.com/lp/solution-intranet/',
+        thumbnail: IntranetInside,
+        techno: [
+            'vue',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
+    },
+    {
+        title: 'VetApp',
+        link: '',
+        thumbnail: Vetapp,
+        techno: [
+            'react',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
     },
     {
         title: 'Endless (E-commerce v1)',
         link: 'https://endless.com',
-        thumbnail: BlingBling
+        thumbnail: BlingBling,
+        techno: [
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry'
+        ]
+
     },
     {
-        title: 'Endless',
-        link: 'https://endless.com',
-        thumbnail: EndlessImage
+        title: 'Click N Lerins',
+        link: '',
+        thumbnail: ClickNLerins,
+        techno: [
+            'vue',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
     },
     {
-        title: 'Endless',
-        link: 'https://endless.com',
-        thumbnail: EndlessImage
-    }
+        title: 'Buddy',
+        link: '',
+        thumbnail: Buddy,
+        techno: [
+            'vue',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
+    },
+    {
+        title: 'Leclerc',
+        link: '',
+        thumbnail: Leclerc,
+        techno: [
+            'vue',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+        ]
+    },
+
 ];
 
 export const Homepage = () => {
