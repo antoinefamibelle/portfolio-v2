@@ -7,39 +7,7 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
-
-import Docker from "@/assets/icons/docker.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import Node from "@/assets/icons/node.svg";
-import Postgres from "@/assets/icons/postgres.svg";
-import Sentry from "@/assets/icons/sentry.svg";
-import Redis from "@/assets/icons/redis.svg";
-import TypeScript from "@/assets/icons/ts.svg";
-import SQL from "@/assets/icons/sql.svg";
-
-const IconTechMapper = (tech: string) => {
-  switch (tech) {
-    case "docker":
-      return Docker;
-    case "react":
-      return ReactIcon;
-    case "node":
-      return Node;
-    case "postgres":
-      return Postgres;
-    case "sentry":
-      return Sentry;
-    case "redis":
-      return Redis;
-    case "ts":
-      return TypeScript;
-    case "sql":
-      return SQL;
-    default:
-      return Docker;
-  }
-
-}
+import { IconTechMapper } from "@/lib/utils/mapper";
 
 export const HeroParallax = ({
   products,

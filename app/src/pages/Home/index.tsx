@@ -12,13 +12,14 @@ import Buddy from '@/assets/buddy.png';
 import ClickNLerins from '@/assets/clicknlerins.png';
 import Hospitalidee from '@/assets/hospitalidee.png';
 import IntranetInside from '@/assets/intranet-inside.png';
-
+import AntoineFamibelleDev from '@/assets/antoine-dev.png';
 import BlingBling from '@/assets/blingbling.png';
 import Antoine from '@/assets/me.jpg';
 import { isDark } from "@/lib/utils";
 import { MacbookScroll } from "@/components/ui/macbook";
 import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import { ThreeDCardDemo } from "@/components/ui/3d-card";
 const content = [
     {
       title: "Master of expert of informatic system",
@@ -52,19 +53,18 @@ const content = [
 
 const workProjects = [
     {
-        title: 'Endless (showcase website)',
-        link: 'https://endless.com',
-        thumbnail: EndlessImage,
+        title: 'VetApp',
+        link: '',
+        thumbnail: Vetapp,
         techno: [
             'react',
             'ts',
-            'redis',
             'node',
             'postgres',
             'sql',
-            'sentry'
         ]
     },
+   
     {
         title: 'Pertimm',
         link: 'https://www.pertimm.com/',
@@ -74,9 +74,18 @@ const workProjects = [
             'ts',
             'redis',
             'node',
-            'postgres',
-            'sql',
+            'mongo',
         ]
+    },
+    {
+        title: 'Antoine Famibelle (v1)',
+        link: 'https://antoinefamibelle-dev.com',
+        thumbnail: AntoineFamibelleDev,
+        techno: [
+            'vue',
+            'ts',
+        ]
+
     },
     {
         title: 'Endless (Mobile App)',
@@ -91,7 +100,8 @@ const workProjects = [
             'postgres',
             'sql',
             'sentry',
-            'expo'
+            'expo',
+            'kafka'
         ]
     },
     {
@@ -105,36 +115,8 @@ const workProjects = [
             'node',
             'postgres',
             'sql',
-        ]
-    },
-    {
-        title: 'Endless (E-commerce v2)',
-        link: 'https://endless.com',
-        thumbnail: EndlessCustomerArea,
-        techno: [
-            'react',
-            'ts',
             'redis',
-            'node',
-            'postgres',
-            'sql',
-            'sentry'
-        ]
-
-    },
-   
-    {
-        title: 'Endless',
-        link: 'https://endless.com',
-        thumbnail: EndlessImage,
-        techno: [
-            'react',
-            'ts',
-            'redis',
-            'node',
-            'postgres',
-            'sql',
-            'sentry'
+            'prisma'
         ]
     },
     {
@@ -147,9 +129,21 @@ const workProjects = [
             'node',
             'postgres',
             'sql',
+            'prisma'
         ]
     },
    
+    {
+        title: 'Endless',
+        link: 'https://endless.com',
+        thumbnail: EndlessImage,
+        techno: [
+            'react',
+            'ts',
+            'sentry'
+        ]
+    },
+    
     {
         title: 'Hospitalidee',
         link: 'https://www.hospitalidee.fr/',
@@ -175,15 +169,13 @@ const workProjects = [
         ]
     },
     {
-        title: 'VetApp',
-        link: '',
-        thumbnail: Vetapp,
+        title: 'Endless (showcase website)',
+        link: 'https://endless.com',
+        thumbnail: EndlessImage,
         techno: [
             'react',
             'ts',
-            'node',
-            'postgres',
-            'sql',
+            'sentry'
         ]
     },
     {
@@ -198,6 +190,23 @@ const workProjects = [
             'postgres',
             'sql',
             'sentry'
+        ]
+
+    },
+    {
+        title: 'Endless (E-commerce v2)',
+        link: 'https://endless.com',
+        thumbnail: EndlessCustomerArea,
+        techno: [
+            'react',
+            'ts',
+            'redis',
+            'node',
+            'postgres',
+            'sql',
+            'sentry',
+            'kafka',
+            'prisma'
         ]
 
     },
@@ -242,6 +251,7 @@ const workProjects = [
 
 export const Homepage = () => {
     const { theme } = useTheme();
+    const isDesktop = window.innerWidth > 1024;
 
     return(
         <div className="mx-2 h-screen">
@@ -268,9 +278,9 @@ export const Homepage = () => {
                     src={EndlessImage}
                     title={
                         <>
-                        <h1 className="text-[4rem] md:text-4xl font-semibold text-black dark:text-white">
+                        <h1 className="md:text-[4rem] text-4xl font-semibold text-black dark:text-white">
                             The only limit <br />
-                            <span className="text-[6rem] md:text-4xl font-bold mt-1 leading-none">
+                            <span className="md:text-[6rem] text-4xl font-bold mt-1 leading-none">
                             is your creativity.
                             </span>
                             <div className="h-40 relative mt-2">
@@ -330,12 +340,60 @@ export const Homepage = () => {
             {/* 
                 Section 3: Projects / Works
              */}
-            <div className="">
+            <div className="md:h-[125vh] h-[100vh] overflow-hidden overflow-x-hidden">
                 <HeroParallax
                     products={workProjects}
                 />
             </div>
-            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                {workProjects.map((project) => {
+                    return (
+                        <ThreeDCardDemo
+                            title={project.title}
+                            description="This is a description"
+                            image={project.thumbnail}
+                            link={project.link}
+                            techno={project.techno}
+                        />
+                    );
+                })}
+            </div>
+            <div>
+                <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
+                    Some stuff that I'm proud off
+                </h1>
+                <p className="text-center text-xl dark:text-neutral-200 my-12 mx-12">
+                    I have been working on my final master project for more than 2 years.
+                    At the end of my studies a jury of professionals evaluated my work and gave me the grade of 20/20 and allowed me to present my project to a national contest.
+                    My project ended 4th out of the 16th in the national contest and 4th out of 100th overall.
+                    <br/>
+                    <br/>
+                    Here is a video of my live presentation during the national contest in front of the jury and the public.
+                </p>
+                <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                        width={isDesktop ? 560 : 280}
+                        height="315"
+                        className="rounded-xl ml-auto mr-auto"
+                        src="https://www.youtube.com/embed/657GsKkFwUQ?si=Uean2cRwa_JonBrc&amp;start=5502"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                    />
+                </div>
+            </div>
+            <div>
+                <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
+                    Let's work together
+                </h1>
+                <p className="text-center text-xl dark:text-neutral-200 mt-8">
+                    I'm always looking for new opportunities and challenges.
+                    <br/>
+                    If you think we could work together, feel free to contact me.
+                </p>
+            </div>
         </div>
     );
 };
