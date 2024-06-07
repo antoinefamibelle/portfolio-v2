@@ -278,9 +278,9 @@ export const Homepage = () => {
                     src={EndlessImage}
                     title={
                         <>
-                        <h1 className="md:text-[4rem] text-4xl font-semibold text-black dark:text-white">
+                        <h1 className="text-[4rem] font-semibold text-black dark:text-white">
                             The only limit <br />
-                            <span className="md:text-[6rem] text-4xl font-bold mt-1 leading-none">
+                            <span className="text-[6rem] font-bold mt-1 leading-none">
                             is your creativity.
                             </span>
                             <div className="h-40 relative mt-2">
