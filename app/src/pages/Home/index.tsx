@@ -101,7 +101,7 @@ const workProjects = [
     },
     {
         title: 'Antoine Famibelle (v1)',
-        link: 'https://antoinefamibelle-dev.com',
+        link: 'https://portfolio-v1.antoinefamibelle-dev.com',
         thumbnail: AntoineFamibelleDev,
         techno: [
             'vue',
