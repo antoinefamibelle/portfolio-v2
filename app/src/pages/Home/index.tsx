@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTheme } from "@/context/theme";
 import { isDark } from "@/lib/utils";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowDown, ArrowUp, Github, LinkedinIcon } from "lucide-react";
 
 // Components
 import { SparklesCore } from "@/components/ui/sparkles";
@@ -10,6 +10,7 @@ import { MacbookScroll } from "@/components/ui/macbook";
 import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { ThreeDCardDemo } from "@/components/ui/3d-card";
+import { BottomGradient } from "@/components/ui/input";
 
 // Assets
 import EndlessImage from '@/assets/endless.png';
@@ -26,6 +27,7 @@ import IntranetInside from '@/assets/intranet-inside.png';
 import AntoineFamibelleDev from '@/assets/antoine-dev.png';
 import BlingBling from '@/assets/blingbling.png';
 import Antoine from '@/assets/me.jpg';
+import { Input } from "@/components/ui/input";
 
 
 const content = [
@@ -258,6 +260,9 @@ const workProjects = [
 
 export const Homepage = () => {
     const [showAll, setShowAll] = useState<boolean>(false);
+    
+    const inputRef = useRef<HTMLAnchorElement>();
+
     const { theme } = useTheme();
     const isDesktop = window.innerWidth > 1024;
 
@@ -368,7 +373,9 @@ export const Homepage = () => {
                 })}
                
             </div>
-    
+                {/* 
+                // Section 4: View more
+                 */}
             <div className='flex w-full justify-center aligns-center'>
                 <button
                     onClick={() => setShowAll(!showAll)}
@@ -381,6 +388,9 @@ export const Homepage = () => {
                 </button>
             </div>
 
+                {/* 
+                // Section 5: Some stuff that I'm proud off
+                 */}
             <div>
                 <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
                     Some stuff that I'm proud off
@@ -407,7 +417,10 @@ export const Homepage = () => {
                     />
                 </div>
             </div>
-            <div>
+            {/* 
+            // Section 6: Let's work together
+             */}
+            <div className="pb-12">
                 <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
                     Let's work together
                 </h1>
@@ -416,6 +429,33 @@ export const Homepage = () => {
                     <br/>
                     If you think we could work together, feel free to contact me.
                 </p>
+                <div className="flex justify-center aligns-center">
+                    <button
+                        onClick={() => inputRef.current.click()}
+                        className="mt-4 bg-gradient-to-br w-1/2 md:w-1/3 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                    >
+                        <a href="mailto:antoinefamibelle@gmail.com" ref={inputRef}/>
+                            Send me an email &rarr;
+                        <BottomGradient />
+                    </button>
+                </div>
+                <p className="text-center text-xl dark:text-neutral-200 my-4">
+                        Or you can contact me on social media
+                    </p>
+                <div className="flex justify-center aligns-center mt-4">
+                    <a href="https://github.com/antoinefamibelle" target="_blank" rel="noreferrer">
+                        <Github className="w-8 h-8 mr-4"/>
+                    </a>
+                    <a href="https://fr.linkedin.com/in/antoine-famibelle-13a7b717a/" target="_blank" rel="noreferrer">
+                        <LinkedinIcon className="w-8 h-8"/>
+                    </a>
+                </div>
+            </div>
+
+            <div className='flex md:justify-start justify-center'>
+             <span>
+                Made with ❤️ by Antoine Famibelle
+             </span>
             </div>
         </div>
     );

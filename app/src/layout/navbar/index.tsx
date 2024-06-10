@@ -15,7 +15,7 @@ export const Layout = () => {
     <div>
       {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
-        {isDesktop && (
+        {/* {isDesktop && (
           <FloatingNav
           navItems={[
             {
@@ -46,14 +46,14 @@ export const Layout = () => {
           ]}
           className={isDark(theme) ? "dark" : ""}
         />
-        )}
+        )} */}
       {/* An <Outlet> renders whatever child route is currently active,
           so you can think about this <Outlet> as a placeholder for
           the child routes we defined above. */}
       <div>
         <Outlet />
       </div>
-      {!isDesktop && (
+      {/* {!isDesktop && (
         <FloatingNav
         navItems={[
           {
@@ -84,7 +84,7 @@ export const Layout = () => {
         ]}
           className={isDark(theme) ? "dark" : ""}
         />
-      )}
+      )} */}
     </div>
   );
 }
