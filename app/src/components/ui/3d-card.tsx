@@ -178,13 +178,13 @@ export function ThreeDCardDemo({
           >
            {title}
           </CardItem>
-          <CardItem
+          {/* <CardItem
             as="p"
             translateZ="60"
             className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
             {description}
-          </CardItem>
+          </CardItem> */}
           <CardItem translateZ="100" className="w-full mt-4">
             <img
               src={image}
@@ -204,24 +204,25 @@ export function ThreeDCardDemo({
                 })
             }
         </div>
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              as={Button}
-              href={link}
-              target="__blank"
-              className="px-4 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-            >
-              {link ? "View project" : "Project not available"}
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              as="button"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold flex items-center justify-center flex-row"
-            >
-              Visit
-              <ArrowRight size={16} className="ml-2" />
-            </CardItem>
+          <div className="flex justify-end items-center mt-20">
+            {link ? (
+              <CardItem
+                translateZ={20}
+                as="button"
+                className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold flex items-center justify-center flex-row"
+              >
+                View project
+                <ArrowRight size={16} className="ml-2" />
+              </CardItem>
+             ) : (
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="px-4 py-2 rounded-xl bg-whitesmoke dark:bg-whitesmoke dark:text-black text-white text-xs font-bold flex items-center justify-center flex-row"
+                >
+                  Project is offline for now or private
+                </CardItem>
+             )}
           </div>
         </CardBody>
       </CardContainer>

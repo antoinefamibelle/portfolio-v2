@@ -74,7 +74,6 @@ const workProjects = [
             'sql',
         ]
     },
-   
     {
         title: 'Pertimm',
         link: 'https://www.pertimm.com/',
@@ -108,11 +107,10 @@ const workProjects = [
             'vue',
             'ts',
         ]
-
     },
     {
         title: 'Endless (Mobile App)',
-        link: 'https://endless.com',
+        link: '',
         thumbnail: EndlessCustomerApp,
         isMobile: true,
         techno: [
@@ -152,7 +150,6 @@ const workProjects = [
             'sentry'
         ]
     },
-    
     {
         title: 'Hospitalidee',
         link: 'https://www.hospitalidee.fr/',
@@ -189,7 +186,7 @@ const workProjects = [
     },
     {
         title: 'Endless (E-commerce v1)',
-        link: 'https://endless.com',
+        link: '',
         thumbnail: BlingBling,
         techno: [
             'react',
@@ -204,7 +201,7 @@ const workProjects = [
     },
     {
         title: 'Endless (E-commerce v2)',
-        link: 'https://endless.com',
+        link: 'https://my.endless.fr/login',
         thumbnail: EndlessCustomerArea,
         techno: [
             'react',
@@ -255,7 +252,6 @@ const workProjects = [
             'sql',
         ]
     },
-
 ];
 
 export const Homepage = () => {
