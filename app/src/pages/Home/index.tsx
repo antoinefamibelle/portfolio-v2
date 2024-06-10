@@ -1,6 +1,17 @@
-import { Highlight } from "@/components/ui/highlight";
+import { useState } from "react";
 import { useTheme } from "@/context/theme";
+import { isDark } from "@/lib/utils";
+import { ArrowDown, ArrowUp } from "lucide-react";
+
+// Components
 import { SparklesCore } from "@/components/ui/sparkles";
+import { Highlight } from "@/components/ui/highlight";
+import { MacbookScroll } from "@/components/ui/macbook";
+import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { ThreeDCardDemo } from "@/components/ui/3d-card";
+
+// Assets
 import EndlessImage from '@/assets/endless.png';
 import EndlessCustomerApp from '@/assets/endless-customer-app.png';
 import EndlessCustomerArea from '@/assets/customer-area.jpg';
@@ -15,11 +26,8 @@ import IntranetInside from '@/assets/intranet-inside.png';
 import AntoineFamibelleDev from '@/assets/antoine-dev.png';
 import BlingBling from '@/assets/blingbling.png';
 import Antoine from '@/assets/me.jpg';
-import { isDark } from "@/lib/utils";
-import { MacbookScroll } from "@/components/ui/macbook";
-import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
-import { HeroParallax } from "@/components/ui/hero-parallax";
-import { ThreeDCardDemo } from "@/components/ui/3d-card";
+
+
 const content = [
     {
       title: "Master of expert of informatic system",
@@ -78,6 +86,19 @@ const workProjects = [
         ]
     },
     {
+        title: 'Nudiet',
+        link: 'https://nudiet.fr/',
+        thumbnail: Nudiet,
+        techno: [
+            'react',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+            'prisma'
+        ]
+    },
+    {
         title: 'Antoine Famibelle (v1)',
         link: 'https://antoinefamibelle-dev.com',
         thumbnail: AntoineFamibelleDev,
@@ -119,20 +140,6 @@ const workProjects = [
             'prisma'
         ]
     },
-    {
-        title: 'Nudiet',
-        link: 'https://nudiet.fr/',
-        thumbnail: Nudiet,
-        techno: [
-            'react',
-            'ts',
-            'node',
-            'postgres',
-            'sql',
-            'prisma'
-        ]
-    },
-   
     {
         title: 'Endless',
         link: 'https://endless.com',
@@ -250,6 +257,7 @@ const workProjects = [
 ];
 
 export const Homepage = () => {
+    const [showAll, setShowAll] = useState<boolean>(false);
     const { theme } = useTheme();
     const isDesktop = window.innerWidth > 1024;
 
@@ -346,7 +354,8 @@ export const Homepage = () => {
                 />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                {workProjects.map((project) => {
+                {workProjects.map((project, index) => {
+                    if (index >= 3 && !showAll) return null;
                     return (
                         <ThreeDCardDemo
                             title={project.title}
@@ -357,7 +366,21 @@ export const Homepage = () => {
                         />
                     );
                 })}
+               
             </div>
+    
+            <div className='flex w-full justify-center aligns-center'>
+                <button
+                    onClick={() => setShowAll(!showAll)}
+                    className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                        {!showAll ? 'View more of my work' : 'View less of my work'}
+                        {!showAll ? <ArrowDown className="w-5 h-5 ml-2" /> : <ArrowUp className="w-5 h-5 ml-2" />}
+                    </span>
+                </button>
+            </div>
+
             <div>
                 <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
                     Some stuff that I'm proud off
