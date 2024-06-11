@@ -14,7 +14,7 @@ import { useSportyStore } from './store';
 import { MultiStepLoader } from './components/ui/loader';
 
 function App() {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const { user, setUser } = useSportyStore(state => ({
     user: state.user,
     setUser: state.setUser

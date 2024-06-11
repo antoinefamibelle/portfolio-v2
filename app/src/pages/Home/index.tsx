@@ -324,7 +324,7 @@ export const Homepage = () => {
             <div className="md:mx-24 md:pt-8">
                 <GridBackgroundDemo>
                     <span className="text-4xl md:text-[5rem] font-semi-bold leading-none md:mb-8">
-                        Let met take you to my story
+                        Let me take you to my story
                     </span>
                     <div className="md:mt-12">
                         {content.map((item) => (
@@ -392,9 +392,11 @@ export const Homepage = () => {
                     Some stuff that I'm proud off
                 </h1>
                 <p className="text-center text-xl dark:text-neutral-200 my-12 mx-12">
-                    I have been working on my final master project for more than 2 years.
-                    At the end of my studies a jury of professionals evaluated my work and gave me the grade of 20/20 and allowed me to present my project to a national contest.
-                    My project ended 4th out of the 16th in the national contest and 4th out of 100th overall.
+                I have dedicated over two years to the development and execution of my final Master's project.
+                Upon completion, a panel of industry professionals assessed my work, resulting in an exceptional grade of 20/20.
+                This achievement granted me the opportunity to showcase my project in a national competition.
+                Amongst a pool of 16 finalists,my project secured a notable 4th place, and in the overall ranking of 100 participants,
+                it consistently maintained its 4th position.
                     <br/>
                     <br/>
                     Here is a video of my live presentation during the national contest in front of the jury and the public.
