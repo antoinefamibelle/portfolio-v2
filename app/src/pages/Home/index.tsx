@@ -13,21 +13,20 @@ import { ThreeDCardDemo } from "@/components/ui/3d-card";
 import { BottomGradient } from "@/components/ui/input";
 
 // Assets
-import EndlessImage from '@/assets/endless.png';
-import EndlessCustomerApp from '@/assets/endless-customer-app.png';
-import EndlessCustomerArea from '@/assets/customer-area.jpg';
-import Nudiet from '@/assets/nudiet.png';
-import Leclerc from '@/assets/leclerc.png';
-import Pertimm from '@/assets/pertimm.png';
-import Vetapp from '@/assets/vetapp.png';
-import Buddy from '@/assets/buddy.png';
-import ClickNLerins from '@/assets/clicknlerins.png';
-import Hospitalidee from '@/assets/hospitalidee.png';
-import IntranetInside from '@/assets/intranet-inside.png';
-import AntoineFamibelleDev from '@/assets/antoine-dev.png';
-import BlingBling from '@/assets/blingbling.png';
-import Antoine from '@/assets/me.jpg';
-import { Input } from "@/components/ui/input";
+import EndlessImage from '@/assets/endless-min.png';
+import EndlessCustomerApp from '@/assets/endless-customer-app-min.png';
+import EndlessCustomerArea from '@/assets/customer-area-min.jpg';
+import Nudiet from '@/assets/nudiet-min.png';
+import Leclerc from '@/assets/leclerc-min.png';
+import Pertimm from '@/assets/pertimm-min.png';
+import Vetapp from '@/assets/vetapp-min.png';
+import Buddy from '@/assets/buddy-min.png';
+import ClickNLerins from '@/assets/clicknlerins-min.png';
+import Hospitalidee from '@/assets/hospitalidee-min.png';
+import IntranetInside from '@/assets/intranet-inside-min.png';
+import AntoineFamibelleDev from '@/assets/antoine-dev-min.png';
+import BlingBling from '@/assets/blingbling-min.png';
+import Antoine from '@/assets/me-min.jpg';
 
 
 const content = [
@@ -277,7 +276,7 @@ export const Homepage = () => {
                     <p>I'm a software engineer</p>
                     <p>and I love to build things.</p>
                 </p>
-                <img src={Antoine} alt="Endless" className="md:h-80 rounded-2xl" />
+                <img src={Antoine} alt="Antoine Famibelle" className="md:h-80 rounded-2xl" />
             </div>
             {/* 
              Section 1: Macbook Scroll
