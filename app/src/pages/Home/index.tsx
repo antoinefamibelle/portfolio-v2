@@ -414,8 +414,42 @@ export const Homepage = () => {
                     />
                 </div>
             </div>
+
+            {
+                /* 
+                // Section 6: My Tech blog
+                 */
+            }
+            <div>
+                <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
+                    My Tech blog
+                </h1>
+                <p className="text-center text-xl dark:text-neutral-200 my-12 mx-12">
+                I have dedicated over two years to the development and execution of my final Master's project.
+                Upon completion, a panel of industry professionals assessed my work, resulting in an exceptional grade of 20/20.
+                This achievement granted me the opportunity to showcase my project in a national competition.
+                Amongst a pool of 16 finalists,my project secured a notable 4th place, and in the overall ranking of 100 participants,
+                it consistently maintained its 4th position.
+                    <br/>
+                    <br/>
+                    Here is a video of my live presentation during the national contest in front of the jury and the public.
+                </p>
+                <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                        width={isDesktop ? 560 : 280}
+                        height="315"
+                        className="rounded-xl ml-auto mr-auto"
+                        src="https://www.youtube.com/embed/657GsKkFwUQ?si=Uean2cRwa_JonBrc&amp;start=5502"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                    />
+                </div>
+            </div>
             {/* 
-            // Section 6: Let's work together
+            // Section 7: Let's work together
              */}
             <div className="pb-12">
                 <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
