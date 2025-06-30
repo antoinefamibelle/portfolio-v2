@@ -6,6 +6,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { getPostBySlug } from '@/data/blog';
 import { Badge } from '@/components/ui/badge';
+import { SEOHead } from '@/components/SEOHead';
+import { blogSEO, detectLanguage } from '@/lib/seo';
 import {
   BlogTitle,
   BlogSubtitle,
@@ -45,8 +47,23 @@ export const BlogPost = () => {
     });
   };
 
+  const userLang = detectLanguage();
+  const seoConfig = {
+    ...blogSEO[userLang],
+    title: `${post.title} | Antoine Famibelle`,
+    description: post.excerpt,
+    url: `/blog/${slug}`,
+    image: post.coverImage || undefined
+  };
+
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <>
+      <SEOHead 
+        config={seoConfig} 
+        lang={userLang}
+        baseUrl="https://antoinefamibelle.dev"
+      />
+      <div className="min-h-screen bg-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Link
           to="/"
@@ -151,5 +168,6 @@ export const BlogPost = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
