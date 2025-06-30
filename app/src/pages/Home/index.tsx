@@ -11,6 +11,10 @@ import { GridBackgroundDemo } from "@/components/ui/gradien-bg";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { ThreeDCardDemo } from "@/components/ui/3d-card";
 import { BottomGradient } from "@/components/ui/input";
+import { BlogCard } from "@/components/custom";
+
+// Data
+import { getFeaturedPosts } from "@/data/blog";
 
 // Assets
 import EndlessImage from '@/assets/endless-min.png';
@@ -62,6 +66,19 @@ const content = [
 
 const workProjects = [
     {
+        title: 'Nudiet',
+        link: 'https://nudiet.fr/',
+        thumbnail: Nudiet,
+        techno: [
+            'react',
+            'ts',
+            'node',
+            'postgres',
+            'sql',
+            'drizzle'
+        ]
+    },
+    {
         title: 'VetApp',
         link: '',
         thumbnail: Vetapp,
@@ -83,19 +100,6 @@ const workProjects = [
             'redis',
             'node',
             'mongo',
-        ]
-    },
-    {
-        title: 'Nudiet',
-        link: 'https://nudiet.fr/',
-        thumbnail: Nudiet,
-        techno: [
-            'react',
-            'ts',
-            'node',
-            'postgres',
-            'sql',
-            'prisma'
         ]
     },
     {
@@ -283,7 +287,7 @@ export const Homepage = () => {
              */}
              <div className="md:h-[150vh] h-[125vh] overflow-hidden md:pb-50">
                 <MacbookScroll
-                    src={EndlessImage}
+                    src={Nudiet}
                     title={
                         <>
                         <h1 className="text-[4rem] font-semibold text-black dark:text-white">
@@ -420,32 +424,19 @@ export const Homepage = () => {
                 // Section 6: My Tech blog
                  */
             }
-            <div>
+            <div className="mt-16">
                 <h1 className="text-4xl font-semibold text-black dark:text-white text-center mt-8">
-                    My Tech blog
+                    My Tech Blog
                 </h1>
                 <p className="text-center text-xl dark:text-neutral-200 my-12 mx-12">
-                I have dedicated over two years to the development and execution of my final Master's project.
-                Upon completion, a panel of industry professionals assessed my work, resulting in an exceptional grade of 20/20.
-                This achievement granted me the opportunity to showcase my project in a national competition.
-                Amongst a pool of 16 finalists,my project secured a notable 4th place, and in the overall ranking of 100 participants,
-                it consistently maintained its 4th position.
+                    Sharing my thoughts on web development, technology trends, and software engineering best practices.
                     <br/>
-                    <br/>
-                    Here is a video of my live presentation during the national contest in front of the jury and the public.
+                    Here are some of my latest articles.
                 </p>
-                <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                        width={isDesktop ? 560 : 280}
-                        height="315"
-                        className="rounded-xl ml-auto mr-auto"
-                        src="https://www.youtube.com/embed/657GsKkFwUQ?si=Uean2cRwa_JonBrc&amp;start=5502"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 md:mx-12">
+                    {getFeaturedPosts().map((post) => (
+                        <BlogCard key={post.id} post={post} />
+                    ))}
                 </div>
             </div>
             {/* 

@@ -5,6 +5,7 @@ import { AuthContext, LoadingContext } from "@/context";
 import {
   Homepage,
   Page404,
+  BlogPost,
 } from './pages';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from './context/theme';
@@ -47,6 +48,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Layout />}>
                     <Route index element={<Homepage />} />
+                    <Route path="blog/:slug" element={<BlogPost />} />
                     <Route path="*" element={<Page404 />} />
                   </Route>
                 </Routes>
