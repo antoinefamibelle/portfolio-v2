@@ -10,6 +10,7 @@ export const AboutSection = () => {
   return (
     <section 
       aria-labelledby="about-heading"
+      className="mt-0 pt-0"
     >
       <MacbookScroll
         src={Nudiet}

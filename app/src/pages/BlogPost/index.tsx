@@ -7,7 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { getPostBySlug } from '@/data/blog';
 import { Badge } from '@/components/ui/badge';
 import { SEOHead } from '@/components/SEOHead';
-import { blogSEO, detectLanguage } from '@/lib/seo';
+import { blogSEO, detectLanguage, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import {
   BlogTitle,
   BlogSubtitle,
@@ -56,12 +56,30 @@ export const BlogPost = () => {
     image: post.coverImage || undefined
   };
 
+  // Generate structured data for the article
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.excerpt,
+    author: post.author,
+    publishedAt: post.publishedAt,
+    url: `https://antoinefamibelle.dev/blog/${slug}`,
+    image: post.coverImage
+  }, userLang);
+
+  // Generate breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://antoinefamibelle.dev' },
+    { name: 'Blog', url: 'https://antoinefamibelle.dev/#blog' },
+    { name: post.title, url: `https://antoinefamibelle.dev/blog/${slug}` }
+  ]);
+
   return (
     <>
       <SEOHead 
         config={seoConfig} 
         lang={userLang}
         baseUrl="https://antoinefamibelle.dev"
+        additionalSchemas={[articleSchema, breadcrumbSchema]}
       />
       <div className="min-h-screen bg-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 py-8">

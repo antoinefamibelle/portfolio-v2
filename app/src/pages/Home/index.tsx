@@ -23,29 +23,39 @@ export const Homepage = () => {
       
       <main className="mx-2">
         {/* Hero Section */}
-        <div className="h-screen">
           <HeroSection />
-          
-          {/* About Section with MacBook scroll */}
+
+        {/* About Section with MacBook scroll - Full height container for scroll effect */}
+        <section className="md:min-h-[300vh] min-h-[150vh] relative">
           <AboutSection />
-        </div>
+        </section>
 
-        {/* Projects Section */}
-        <ProjectsSection />
+        {/* Projects Section - Starts after MacBook scroll completes */}
+        <section className="min-h-screen pt-20">
+          <ProjectsSection />
+        </section>
 
-        {/* Background Grid */}
-        <GridBackgroundDemo>
-          <div className="h-20"></div>
-        </GridBackgroundDemo>
+        {/* Background Grid - Visual separator */}
+        <section className="py-20">
+          <GridBackgroundDemo>
+            <div className="h-20"></div>
+          </GridBackgroundDemo>
+        </section>
 
         {/* Education Section */}
-        <EducationSection />
+        <section>
+          <EducationSection />
+        </section>
 
         {/* Blog Section */}
-        <BlogSection />
+        <section>
+          <BlogSection />
+        </section>
 
         {/* Contact Section */}
-        <ContactSection />
+        <section>
+          <ContactSection />
+        </section>
 
         {/* Footer */}
         <footer className="flex md:justify-start justify-center pb-8" role="contentinfo">

@@ -173,6 +173,65 @@ export function detectLanguage(): 'fr' | 'en' {
   return 'en';
 }
 
+// Generate robots meta tag content
+export function generateRobotsMeta(index: boolean = true, follow: boolean = true): string {
+  const indexValue = index ? 'index' : 'noindex';
+  const followValue = follow ? 'follow' : 'nofollow';
+  return `${indexValue}, ${followValue}`;
+}
+
+// Generate JSON-LD for breadcrumbs
+export function generateBreadcrumbSchema(items: Array<{name: string, url: string}>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}
+
+// Generate article schema for blog posts
+export function generateArticleSchema(article: {
+  title: string;
+  description: string;
+  author: string;
+  publishedAt: string;
+  url: string;
+  image?: string;
+}, lang: 'fr' | 'en' = 'en') {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.description,
+    "author": {
+      "@type": "Person",
+      "name": article.author,
+      "url": "https://antoinefamibelle.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Antoine Famibelle",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://antoinefamibelle.dev/memoji.png"
+      }
+    },
+    "datePublished": article.publishedAt,
+    "dateModified": article.publishedAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": article.url
+    },
+    "image": article.image || "https://antoinefamibelle.dev/memoji.png",
+    "inLanguage": lang === 'fr' ? 'fr-FR' : 'en-US'
+  };
+}
+
 // Schema.org structured data
 export function generateStructuredData(lang: 'fr' | 'en' = 'en') {
   const isEnglish = lang === 'en';

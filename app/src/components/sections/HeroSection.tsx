@@ -4,10 +4,10 @@ import Antoine from '@/assets/me-min.jpg';
 export const HeroSection = () => {
   return (
     <section 
-      className="flex md:flex-row justify-center items-center md:mt-32 mt-8 md:mx-32 mx-4 flex-col"
+      className="flex md:flex-row justify-center items-center md:mt-32 mt-8 md:mx-32 mx-4 flex-col h-[60]"
       aria-labelledby="hero-heading"
     >
-      <div className="text-5xl font-semibold text-black dark:text-white mb-8 text-start md:mr-32 mx-4">
+      <div className="text-5xl font-semibold text-black dark:text-white text-start md:mr-32 mx-4">
         <h1 id="hero-heading" className="sr-only">
           Antoine Famibelle - Full-Stack Developer
         </h1>
