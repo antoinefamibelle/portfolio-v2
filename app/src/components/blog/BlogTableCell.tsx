@@ -5,7 +5,7 @@ interface BlogTableCellProps {
   children: React.ReactNode;
   className?: string;
   header?: boolean;
-  align?: 'left' | 'center' | 'right';
+  align?: 'left' | 'center' | 'right' | 'justify' | 'char'
 }
 
 export const BlogTableCell: React.FC<BlogTableCellProps> = ({ 
